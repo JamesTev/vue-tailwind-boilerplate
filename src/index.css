@@ -3,15 +3,11 @@
 @tailwind utilities;
 
 /* import any custom fonts */
-@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap'); */
 
 /* establish base Tailwind styles */
 @layer base{
     .btn-primary{
-        @apply bg-primary-500 text-white px-4 py-2 max-h-10 align-middle rounded-lg text-sm;
-    }
-
-    .btn-primary-o{
-        @apply border-primary-500 border text-primary-500 px-4 py-2 rounded-lg text-sm;
+        @apply align-middle rounded-lg text-sm;
     }
 }

@@ -1,18 +1,10 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import AuthPortal from '../views/AuthPortal.vue'
-import Dashboard from '../views/Dashboard.vue'
 
 import {TokenService} from '../services/storage.service'
 
 // lazy loading
-const Shop = () => import(/* webpackChunkName: "group-commerce" */ '@/views/Shop.vue')
-const Partners = () => import(/* webpackChunkName: "group-commerce" */ '@/views/Partners.vue')
-const Allotment = () => import(/* webpackChunkName: "group-allotment" */ '@/views/Allotment.vue')
-const AllotmentDetail = () => import(/* webpackChunkName: "group-allotment" */ '@/components/allotment/AllotmentDetail.vue')
-const PickAndGoQR = () => import(/* webpackChunkName: "group-pickngo" */ '@/views/PickAndGoQR.vue')
-const PickAndGo = () => import(/* webpackChunkName: "group-pickngo" */ '@/views/PickAndGo.vue')
-const PickAndGoCheckout = () => import('@/components/marketplace/PickAndGoCheckout.vue')
 const Profile = () => import(/* webpackChunkName: "social" */ '@/views/Profile.vue')
 
 const Signup = () => import(/* webpackChunkName: "auth" */ '@/components/auth/Signup.vue')
@@ -47,54 +39,12 @@ const routes = [
     name: 'onboarding',
     component: Onboarding
   },
-  
-  {
-    path: '/pickngo/code',
-    name: 'pickAndGoQR',
-    component: PickAndGoQR,
-  },
-  {
-    path: '/pickngo/:vendorId',
-    name: 'pickAndGo',
-    component: PickAndGo,
-    children: [
-      {
-        name: 'pickAndGoCheckout',
-        path: 'checkout',
-        component: PickAndGoCheckout
-      }
-    ]
-  },
+
   {
     path: '/',
-    name: 'dashboard',
-    component: Dashboard,
+    name: 'home',
+    component: Home,
     children: [
-      {
-        name: 'home',
-        path: 'home',
-        component: Home
-      },
-    {
-      name: 'explore',
-      path: 'explore',
-      component: Shop
-    },
-    {
-      name: 'partners',
-      path: 'partners',
-      component: Partners
-    },
-    {
-      name: 'allotments',
-      path: 'allotments',
-      component: Allotment
-    },
-    {
-      name: 'allotmentDetail',
-      path: 'allotments/:identifier',
-      component: AllotmentDetail
-    },
     {
       path: '/profile',
       name: 'profile',
@@ -108,7 +58,7 @@ const routes = [
   {
     path: '*', // make sure this is last - it will match anything not matched above
     name: 'default',
-    component: Dashboard,
+    component: Home,
   },
 ];
 

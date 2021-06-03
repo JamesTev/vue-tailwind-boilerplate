@@ -2,11 +2,11 @@
   <div>
     <div
       v-if="!loggedIn"
-      class="flex my-20 mx-auto overflow-hidden bg-white md:rounded-xl md:shadow-lgdark:bg-gray-800 lg:max-w-5xl"
+      class="flex my-20 md:my-32 mx-auto overflow-hidden bg-white md:rounded-xl md:shadow-lgdark:bg-gray-800 lg:max-w-5xl"
     >
       <div
         class="hidden bg-cover lg:block lg:w-1/2"
-        style="background-image:url('https://source.unsplash.com/SVGw0YkqN4o/1200x900')"
+        style="background-image:url('https://source.unsplash.com/1200x900/?mountain,sea,cape%20town')"
       ></div>
 
       <div class="w-full px-2 py-4 md:px-8 lg:w-1/2">

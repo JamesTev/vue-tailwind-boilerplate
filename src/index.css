@@ -10,4 +10,8 @@
     .btn-primary{
         @apply align-middle rounded-lg text-sm;
     }
+
+    .input-primary{
+        @apply block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded focus:border-blue-500 focus:outline-none
+    }
 }

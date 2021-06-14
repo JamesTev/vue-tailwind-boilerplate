@@ -1,27 +1,33 @@
 <template>
   <div>
     <div
-      v-if="!loggedIn"
-      class="flex my-20 md:my-32 mx-auto overflow-hidden bg-white md:rounded-xl md:shadow-lgdark:bg-gray-800 lg:max-w-5xl"
+      class="bg-white lg:bg-gradient-to-tr py-10 fixed top-0 bottom-0 left-0 right-0 overflow-auto from-blue-700 to-blue-400"
     >
       <div
-        class="hidden bg-cover lg:block lg:w-1/2"
-        style="background-image:url('https://source.unsplash.com/1200x900/?mountain,sea,cape%20town')"
-      ></div>
-
-      <div class="w-full px-2 py-4 md:px-8 lg:w-1/2">
-        <img src="/logo.svg" class="mx-auto pb-6" style="width: 40%" alt="" />
-            <router-view/>
-            <p class="text-center text-gray-500 text-sm"> 
-                {{$route.name=='login' ? 'No account yet?':'Already have an account?'}}
-        <router-link class="text-green-500" :to="$route.name=='login' ? 'signup':'login'">
-            {{$route.name=='login' ? 'sign up':'login'}}
-        </router-link>
-        </p>
+        class="grid grid-cols-1 gap-y-4 lg:place-items-center lg:place-content-center h-full"
+      >
+        <div class="py-4 lg:w-1/3 md:py-12 px-4 lg:px-12 lg:shadow-lg lg:rounded-xl bg-white">
+          <div v-if="true || !loggedIn">
+            <router-view> </router-view>
+          </div>
+          <div v-else class="w-full">
+            <div class="mt-8 flex justify-center space-x-4 px-8">
+              <button
+                @click="$router.push({ name: 'home' })"
+                class=" px-4 py-2 w-full text-blue-500 disabled:opacity-50 border  border-blue-500 rounded-md"
+              >
+                Home
+              </button>
+              <button
+                @click="logout"
+                class=" px-4 py-2 w-full text-white disabled:opacity-50  bg-blue-500 rounded-md "
+              >
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div v-else class="flex my-20 mx-auto overflow-hidden bg-white md:rounded-xl md:shadow-lgdark:bg-gray-800 lg:max-w-5xl">
-
     </div>
   </div>
 </template>
